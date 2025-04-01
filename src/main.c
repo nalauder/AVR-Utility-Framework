@@ -1,9 +1,12 @@
 #include "main.h"
 #include "serial.h"
+#include "spi.h"
 
 int main(void)
 {
-    return serial_monitor();
+    spi_init(false);
+    return spi_run();
+    // return serial_monitor();
 }
 
 void blink_delay(void)
