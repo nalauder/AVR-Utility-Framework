@@ -3,9 +3,8 @@
 int main(void)
 {
     uart_init();
-    spi_init(true);
-    return spi_controller_run();
-    // return serial_monitor();
+    radio_init();
+    return radio_run(true);
 }
 
 void blink_delay(void)

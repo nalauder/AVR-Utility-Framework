@@ -10,11 +10,13 @@
 #endif
 
 #include <avr/io.h>
+#define __DELAY_BACKWARD_COMPATIBLE__
 #include <util/delay.h>
 #include <stdbool.h>
 
 #include "serial.h"
 #include "spi.h"
+#include "radio.h"
 
 #define BLINK_DELAY_MS 1000
 

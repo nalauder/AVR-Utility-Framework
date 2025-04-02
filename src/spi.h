@@ -12,5 +12,6 @@
 void spi_init(bool);
 int spi_peripheral_run(void);
 int spi_controller_run(void);
+char SPI_Transfer(char);
 
 #endif
