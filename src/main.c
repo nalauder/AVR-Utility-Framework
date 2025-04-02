@@ -1,11 +1,10 @@
 #include "main.h"
-#include "serial.h"
-#include "spi.h"
 
 int main(void)
 {
-    spi_init(false);
-    return spi_run();
+    uart_init();
+    spi_init(true);
+    return spi_controller_run();
     // return serial_monitor();
 }
 

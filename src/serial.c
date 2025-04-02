@@ -38,7 +38,7 @@ void uart_putstr(char *c, bool newline)
 
 void uart_putbuff(char *c, int len, bool newline)
 {
-    for (int i = 0; i++; i < len)
+    for (int i = 0; i < len; i++)
     {
         uart_putchar(c[i]);
     }
@@ -86,7 +86,7 @@ int serial_monitor() {
         if (c == '\n' || c == '\r') {
             buffer[i-1] = '\0';
             uart_newline();
-            handle_commands(buffer, i);
+            handle_commands(buffer);
             i = 0;
         }
     }
@@ -94,7 +94,7 @@ int serial_monitor() {
     return 0;
 }
 
-int handle_commands(char buffer[256], int length) {
+int handle_commands(char buffer[256]) {
     if (!strcmp(buffer, "help")) {
         uart_putstr("You made it to help!", true);
         return 0;
